@@ -1,4 +1,4 @@
-# example-carrierwave-retryable-uploader
+# study-carrierwave-retryable
 
 **これは学習用のリポジトリです。**
 
