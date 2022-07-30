@@ -1,24 +1,9 @@
-# README
+# example-carrierwave-retryable-uploader
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**これは学習用のリポジトリです。**
 
-Things you may want to cover:
+## これはなに？
 
-* Ruby version
+`CarrierWave::Storage::Fog` を拡張してリトライ可能にしました。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`app/lib/retryable_storage_fog.rb` を参照。
