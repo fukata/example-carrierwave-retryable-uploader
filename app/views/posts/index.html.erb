@@ -1,0 +1,42 @@
+<h1>Posts#index</h1>
+
+<% if flash[:notice].present? %>
+  <div class="notice-flash-container">
+    <p style="font-weight: bold; color: green;"><%= flash[:notice].to_s %></p>
+  </div>
+<% elsif flash[:alert].present? %>
+  <div class="alert-flash-container">
+    <p style="font-weight: bold; color: red;"><%= flash[:alert].to_s %></p>
+  </div>
+<% end %>
+
+<% if @post.errors.present? %>
+  <ul class="error-messages" style="font-weight: bold; color: red;">
+    <% @post.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@post) do |f| %>
+  <div>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.submit("投稿") %>
+  </div>
+<% end %>
+
+<div class="posts">
+  <% @posts.each do |post| %>
+  <div class="post">
+    <p><%= post.created_at.iso8601 %> <span style="font-weight: bold;"><%= post.title %></span></p>
+    <% if post.image.present? %>
+    <%= image_tag(post.image.to_s, width: 320) %>
+    <% end %>
+  </div>
+  <% end %>
+</div>
